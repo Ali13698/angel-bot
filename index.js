@@ -6,7 +6,7 @@ import { DB } from "./db.js";
 import { Matchmaker } from "./matchmaking.js";
 import { BotPool } from "./bot-pool.js";
 
-const BOT_TOKEN = process.env.BOT_TOKEN || process.env.bot || "";
+const BOT_TOKEN = process.env.token || process.env.BOT_TOKEN || "";
 const WEBAPP_URL = "https://ali13698.github.io/ludo/";
 const PORT = process.env.PORT || 3000;
 
