@@ -6,13 +6,13 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=apps/api",
-    "build": "npm run build --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present",
-    "lint": "npm run lint --workspaces --if-present",
-    "typecheck": "npm run typecheck --workspaces --if-present",
-    "db:generate": "npm run generate --workspace=packages/db",
-    "db:migrate": "npm run migrate --workspace=packages/db"
+    "build": "npm run build --workspace=@angel/contracts && npm run build --workspace=@angel/db && npm run build --workspace=@angel/api",
+    "start": "node apps/api/dist/index.js",
+    "dev": "npm run dev --workspace=@angel/api",
+    "test": "npm run test --workspace=@angel/api",
+    "typecheck": "npm run typecheck --workspace=@angel/contracts && npm run typecheck --workspace=@angel/db && npm run typecheck --workspace=@angel/api",
+    "db:generate": "npm run generate --workspace=@angel/db",
+    "db:migrate": "npm run migrate --workspace=@angel/db"
   },
   "engines": {
     "node": ">=20"
